@@ -1,0 +1,33 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+
+# Django
+/staticfiles/
+/media/
+/*.log
+
+# Node / Tailwind
+node_modules/
+upload/static/upload/styles.css
+
+# Environment files
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# VS Code / JetBrains IDEs
+.vscode/
+.idea/
+
+# Backup / system files
+*.bak
+*.swp
+*.tmp
