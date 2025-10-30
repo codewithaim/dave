@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'upload/public/styles.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    <form class="bg-white rounded px-8" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="filename" id="filename"></input>
+        <input type="submit">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Property Name</th>
+                <th>Price</th>
+                <th>Rent</th>
+                <th>EMI</th>
+                <th>Tax</th>
+                <th>Other Expenses</th>
+                <th>Net Expenses</th>
+                <th>Net Income</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in data_objects %}
+            <tr>
+                <td>{{ data.property_name }}</td>
+                <td>{{ data.property_price }}</td>
+                <td>{{ data.property_rent }}</td>
+                <td>{{ data.emi }}</td>
+                <td>{{ data.tax }}</td>
+                <td>{{ data.other_exp }}</td>
+                <td>{{ data.monthly_expenses }}</td>
+                <td>{{ data.monthly_income}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
